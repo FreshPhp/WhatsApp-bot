@@ -20,6 +20,8 @@ valueJSON,
 sleep,
 } = require('./lib/functions');
 
+const { help } = require('./help')
+
 const ban = JSON.parse(fs.readFileSync('./database/banned.json'));
 
 prefix = ['#', '.', '/', '!'];
@@ -124,6 +126,24 @@ return fresh.sendMessage(from, buttonMessageBanned, {quoted:mek});
   
    switch (command) {
      
+     case 'menu':
+await fresh.sendPresenceUpdate('available', from) 
+const buttons = [
+    {index: 1, urlButton: {displayText: 'GitHub do Bot 🤖', url: 'https://github.com/FreshPhp/WhatsApp-bot'}},
+    {index: 2, urlButton: {displayText: 'REST Apis ⭐', url: 'https://fresh-apis.herokuapp.com'}},
+    {index: 3, quickReplyButton: {displayText: 'BLOCK INFINIT', id: 'blockinfinit'}},
+    {index: 4, quickReplyButton: {displayText: 'BLOCK SPAM', id: 'blockspam'}},
+]
+const buttonMessageTeste = {
+	image: {url:"./bot.jpg"},
+    caption: menuplay,
+    footer: `❖ Você pode modificar o menu na pasta _menu.js_`,
+    templateButtons: buttons,
+    headerType: 4
+};
+fresh.sendMessage(from, buttonMessageTeste, {quoted:mek})
+break
+
      case 'eval':
     if (isOwner) return enviar('recurso so pro dono');
       try {
