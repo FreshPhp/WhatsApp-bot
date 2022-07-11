@@ -136,7 +136,7 @@ const buttons = [
 ]
 const buttonMessageTeste = {
 	image: {url:"./bot.jpg"},
-    caption: menuplay,
+    caption: menup,
     footer: `❖ Você pode modificar o menu na pasta _menu.js_`,
     templateButtons: buttons,
     headerType: 4
