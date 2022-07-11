@@ -20,7 +20,7 @@ valueJSON,
 sleep,
 } = require('./lib/functions');
 
-const { help } = require('./help')
+const { menup } = require('./menu')
 
 const ban = JSON.parse(fs.readFileSync('./database/banned.json'));
 
