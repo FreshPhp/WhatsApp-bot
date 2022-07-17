@@ -47,6 +47,8 @@ $ git clone https://github.com/FreshPhp/WhatsApp-bot.git
 $ cd WhatsApp-bot
 $ ./install.sh
 
+OBS: Caso não tenha o JavaScript instalado use: pkg install nodejs -y; pkg install nodejs-lts -y
+
 ```
 
  <h2 align="center">⚙️ Instruções</h2>
