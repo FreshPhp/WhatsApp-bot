@@ -267,8 +267,6 @@ await fresh.sendPresenceUpdate('available', jid)
 const buttons = [
     {index: 1, urlButton: {displayText: 'GitHub do Bot 🤖', url: 'https://github.com/FreshPhp/WhatsApp-bot'}},
     {index: 2, urlButton: {displayText: 'REST Apis ⭐', url: 'https://fresh-apis.herokuapp.com'}},
-    {index: 3, quickReplyButton: {displayText: 'BLOCK INFINIT', id: 'blockinfinit'}},
-    {index: 4, quickReplyButton: {displayText: 'BLOCK SPAM', id: 'blockspam'}},
 ]
 const buttonMessageMenu= {
 	image: {url:"./bot.jpg"},
