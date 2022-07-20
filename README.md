@@ -35,17 +35,19 @@ $ sh install.sh
 $ apt upgrade && apt update -y
 $ git clone https://github.com/FreshPhp/WhatsApp-bot.git
 $ cd WhatsApp-bot
-$ ./install.sh
+$ npm i
+$ node index
 
 💻 Arch Linux
 $ git clone https://github.com/FreshPhp/WhatsApp-bot.git
 $ cd WhatsApp-bot
-$ ./install.sh
+$ bash install.sh
 
 💻 OpenSUSE
 $ git clone https://github.com/FreshPhp/WhatsApp-bot.git
 $ cd WhatsApp-bot
-$ ./install.sh
+$ npm i
+$ node index
 
 OBS: Caso não tenha o JavaScript instalado use: pkg install nodejs -y; pkg install nodejs-lts -y
 
