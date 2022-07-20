@@ -242,11 +242,15 @@ const connect = async () => {
 				info.listResponseMessage.contextInfo.quotedMessage.listMessage.sections &&
 				info.listResponseMessage.contextInfo.quotedMessage.listMessage.sections[0].title ?
 				info.listResponseMessage.contextInfo.quotedMessage.listMessage.sections[0].title: '';
-
+				
+				
+				//===========[ VISUALIZAR MSG && FICAR ONLINE ]===================
+				
+				await fresh.sendPresenceUpdate('available', jid);
+                                await fresh.sendReadReceipt(jid, dados.key.participant, [dados.key.id]);
 				//================ [GATILHO] ==================
 				if (cmd && !isGroup) console.log(`${Color.verde}[CMD] ${Color.reset}${msg} ${Color.amarelo}de ${Color.azul}${nick}${Color.reset}`);
 				if (cmd && isGroup) console.log(`${Color.verde}[CMD] ${Color.reset}${msg} ${Color.amarelo}de ${Color.azul}${nick} ${Color.amarelo}em ${Color.azul}${groupName}${Color.reset}`);
-				if (cmd) fresh.sendReadReceipt(jid, id, [dados.key.id]);
 
 				if (cmd && isBanned) {
 					const buttonMessageBanned = {
