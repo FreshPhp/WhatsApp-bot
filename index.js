@@ -297,10 +297,11 @@ break
 				
 				
 				case 'mek':
-     fresh.sendMessage(jid, {text: JSON.stringify(updateM, null, '\t')});
+     fresh.sendMessage(jid, {text: JSON.stringify(dados.message, null, '\t')});
      break;
      
 case 'addban':
+if (!isGroup) return reply('Use este comando em grupo marcando o membro que deseja que seja bloqueado do bot')
 if (!isDono) return enviar('Recurso somente para meu proprietário!');
 if (dados.message.extendedTextMessage === undefined || dados.message.extendedTextMessage === null) return 
 mentioned = dados.message.extendedTextMessage.contextInfo.mentionedJid
@@ -314,7 +315,8 @@ ban = `_[ ! ] O user: @${mentioned[0].split('@')[0]}_\n_Acaba de ser BANIDO e n�
 fresh.sendMessage(jid, {text:ban, mentions:[mentioned]}, {quoted:dados});
 break
 
-case 'unban':
+case 'desban':
+if (!isGroup) return reply('Use este comando em grupo marcando o membro que deseja que seja desbloqueado do bot')
 if (!isDono) return enviar('Recurso somente para meu proprietário!');
 if (dados.message.extendedTextMessage === undefined || dados.message.extendedTextMessage === null) return 
 mentioned = dados.message.extendedTextMessage.contextInfo.mentionedJid
@@ -329,7 +331,8 @@ fresh.sendMessage(jid, {text:ban, mentions:[mentioned]}, {quoted:dados})
 break;
 
 
-case 'spamblock':case 'blockspam':
+case 'spamblock':
+case 'blockspam':
 if (isGroup) return reply('Use esse comando no pv')
 if(!txt) return reply('Coloque o n�mero do alvo\nExemplo: .blockspam +55 11 9999-9999') 
 alvo = txt.replace(new RegExp("[()+-/ +/]", "gi"), "") + `@s.whatsapp.net`
